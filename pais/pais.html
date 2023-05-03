@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
     <title>DESM - 1</title>
 </head>
 <body>
@@ -30,10 +32,17 @@
                     <option></option>
                 </select>
             </div>
-            <button>Aplicar</button>
+            <button id="aplicar">Aplicar</button>
         </form>
     </div>
-
+    <div>
+        <canvas id="graphicPais"></canvas>
+    </div>
+    <div style="display: flex; justify-content: space-around;">
+        <div >Total de confirmados:<span id="TotalConfirmados"></span></div>
+        <div >Total de mortos:<span id="TotalMortos"></span></div>
+        <div >Total de Recuperados: <span id="TotalRecuperados"></span></div>
+    </div>
     <script type="module" src="/pais//pais.js"></script>
 </body>
 </html>

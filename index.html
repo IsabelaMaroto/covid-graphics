@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="reset.css">
     <title>DESM - 1</title>
   </head>
   <body>
@@ -22,20 +23,20 @@
             </li>
         </ul>
     </header>
-    <div>
-      <div>
+    <div style="width: 100%;  padding: 20px 0; text-align: center;">
+      <div style="display: flex; flex-direction: column;">
         <div id="confirmados"></div>
         <div id="mortos"></div>
         <div id="recuperados"></div>
       </div>
-      <div>
+      <div style="background-color: rgb(226, 219, 219);">
         <p id="atualizacao"></p>
       </div>
     </div>
-    <div>
+    <div style="width: 50%;">
       <canvas id="graphicPie"></canvas>
     </div>
-    <div>
+    <div style="width: 80%;">
       <canvas id="graphicBar"></canvas>
     </div>
 

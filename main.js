@@ -17,10 +17,10 @@ async function covidControll() {
   );
   const dezPaisesMaisMortes = _.dropRight(paisesOrdenadosMortes, 187);
 
-  confirmados.innerText = summary.data.Global.TotalConfirmed;
-  mortos.innerText = summary.data.Global.TotalDeaths;
-  recuperados.innerText = summary.data.Global.TotalRecovered;
-  atualizacao.innerText = "Data de atualização:" + summary.data.Global.Date;
+  confirmados.innerText = "Total de casos confirmados:" + summary.data.Global.TotalConfirmed;
+  mortos.innerText = "Total de mortes:" + summary.data.Global.TotalDeaths;
+  recuperados.innerText = "Total de recuperados:" + summary.data.Global.TotalRecovered;
+  atualizacao.innerText = "Data de atualização:" + summary.data.Global.Date.slice(0, 10);
 
   new Chart(graphicPie, {
     type: "pie",

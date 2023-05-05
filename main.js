@@ -43,6 +43,14 @@ async function covidControll() {
         },
       ],
     },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: "Distribuição de novos casos",
+        },
+      },
+    },
   });
 
   const TotalDeaths = dezPaisesMaisMortes.map((x) => x.TotalDeaths);

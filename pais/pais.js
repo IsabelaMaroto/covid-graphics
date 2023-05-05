@@ -9,6 +9,8 @@ const graphicPais = document.getElementById("graphicPais");
 const totalConf = document.getElementById("TotalConfirmados");
 const totalMortes = document.getElementById("TotalMortos");
 const totalRecup = document.getElementById("TotalRecuperados");
+const boxGraphic = document.getElementById("boxGraphic");
+const boxInfo = document.getElementById("boxInfo");
 
 let listType = ["Mortes", "Casos Confirmados", "Recuperados"];
 const apiCovid = await axios.get("https://api.covid19api.com/summary");
@@ -126,6 +128,7 @@ async function filtro() {
 
   buttom.onclick = (event) => {
     event.preventDefault();
+    
     graficoPorPais();
 
     if (!paisesInput.value || !dadosInput.value) {
@@ -146,3 +149,13 @@ async function filtro() {
 }
 
 filtro();
+
+function click(){
+  const home1 = document.getElementById('home1');
+
+  home1.onclick = () =>{
+    window.location.href = "/index.html"
+  }
+
+}
+click()

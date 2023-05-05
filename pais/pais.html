@@ -1,48 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/reset.css" />
     <title>DESM - 1</title>
-</head>
-<body>
-    <div>
-        <p>Filtro</p>
-        <form>
-            <div>
-                <label>Data inicio</label>
-                <input type="date" id="inicio">
-            </div>
-            <div>
-                <label>Data fim</label>
-                <input type="date" id="fim">
-            </div>
-            <div>
-                <label>País</label>
-                <select id="paises">
-                    <option></option>
-                </select>
-            </div>
-            <div>
-                <label>Dados</label>
-                <select id="dados" >
-                    <option></option>
-                </select>
-            </div>
-            <button id="aplicar">Aplicar</button>
+    <style>
+        body{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: rgb(220, 220, 220);
+        }
+        button {
+          padding: 5px 10px;
+          border: none;
+          background-color: rgb(255, 99, 132);
+          color: rgb(253, 253, 253);
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        header {
+          background-color: grey;
+          display: flex;
+          justify-content: right;
+          width: 100%;
+          padding: 20px 0;
+        }
+        .info {
+          background-color: rgb(0, 255, 255);
+          padding: 20px;
+          border-radius: 10px;
+          margin: 10px 0;
+        }
+        .box {
+          width: 90%;
+          min-width: 500px;
+          padding: 20px;
+          text-align: center;
+          border: 1px solid rgb(0, 0, 0);
+          background-color: rgb(255, 255, 255);
+        }
+      </style>
+  </head>
+  <body>
+    <header>
+        <ul style="display: flex; justify-content: space-around; width: 200px;">
+          <li>
+            <button id="home1">Home</button>
+          </li>
+        </ul>
+      </header>
+    <div style="display: flex; flex-direction: column; background-color: rgb(255, 255, 255); padding: 20px 0; width: 100%; margin: 30px 0;">
+      <div style="padding: 0 20px; margin: 20px 0; max-width: 200px;">
+        <p style="font-weight: bold; padding: 10px 0;">Filtro</p>
+        <form style="display: flex; flex-direction: column; justify-content: space-between; min-height: 150px; min-width: 300px;">
+          <div style="display: flex; justify-content: space-between;">
+            <label>Data inicio</label>
+            <input type="date" id="inicio" />
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <label>Data fim</label>
+            <input type="date" id="fim" />
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <label>País</label>
+            <select id="paises" style="max-width: 140.8px;">
+              <option></option>
+            </select>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <label>Dados</label>
+            <select id="dados">
+              <option></option>
+            </select>
+          </div>
+          <button id="aplicar">Aplicar</button>
         </form>
-    </div>
-    <div>
+      </div>
+      <div id="boxGraphic" style="width: 100%;align-items: center;">
         <canvas id="graphicPais"></canvas>
+      </div>
     </div>
-    <div style="display: flex; justify-content: space-around;">
-        <div >Total de confirmados:<span id="TotalConfirmados"></span></div>
-        <div >Total de mortos:<span id="TotalMortos"></span></div>
-        <div >Total de Recuperados: <span id="TotalRecuperados"></span></div>
+    <div style="display: flex; justify-content: space-around; background-color: rgb(255, 255, 255); padding: 30px 0; width: 100%;" class="boxInfo">
+      <div class="info">Total de confirmados:<span id="TotalConfirmados"></span></div>
+      <div class="info">Total de mortos:<span id="TotalMortos"></span></div>
+      <div class="info">Total de Recuperados: <span id="TotalRecuperados"></span></div>
     </div>
     <script type="module" src="/pais//pais.js"></script>
-</body>
+  </body>
 </html>
